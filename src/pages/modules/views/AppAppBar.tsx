@@ -23,7 +23,7 @@ function AppAppBar() {
             href="/premium-themes/onepirate/"
             sx={{ fontSize: 24 }}
           >
-            {'onepirate'}
+            {'Vale Creative'}
           </Link>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
             <Link
@@ -33,15 +33,15 @@ function AppAppBar() {
               href="/premium-themes/onepirate/sign-in/"
               sx={rightLink}
             >
-              {'Sign In'}
+              {'Opere'}
             </Link>
             <Link
               variant="h6"
               underline="none"
               href="/premium-themes/onepirate/sign-up/"
-              sx={{ ...rightLink, color: 'secondary.main' }}
+              sx={{ ...rightLink, }}
             >
-              {'Sign Up'}
+              {'Biografia'}
             </Link>
           </Box>
         </Toolbar>

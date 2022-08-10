@@ -20,7 +20,7 @@ function ProductCTA() {
   };
 
   return (
-    <Container component="section" sx={{ mt: 10, display: 'flex' }}>
+    <Container component="section" sx={{ mt: 10, mb: 10, display: 'flex' }}>
       <Grid container>
         <Grid item xs={12} md={6} sx={{ zIndex: 1 }}>
           <Box
@@ -34,10 +34,10 @@ function ProductCTA() {
           >
             <Box component="form" onSubmit={handleSubmit} sx={{ maxWidth: 400 }}>
               <Typography variant="h2" component="h2" gutterBottom>
-                Receive offers
+                Contattami
               </Typography>
               <Typography variant="h5">
-                Taste the holidays of the everyday close to home.
+                Richiedi un'opera
               </Typography>
               <TextField
                 noBorder
@@ -51,7 +51,7 @@ function ProductCTA() {
                 variant="contained"
                 sx={{ width: '100%' }}
               >
-                Keep me updated
+                Invia
               </Button>
             </Box>
           </Box>

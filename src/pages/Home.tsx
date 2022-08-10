@@ -18,7 +18,6 @@ function Index() {
       <ProductCategories />
       <ProductHowItWorks />
       <ProductCTA />
-      <ProductSmokingHero />
       <AppFooter />
     </React.Fragment>
   );

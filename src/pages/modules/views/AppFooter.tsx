@@ -11,7 +11,7 @@ function Copyright() {
     <React.Fragment>
       {'© '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Vale Creative
       </Link>{' '}
       {new Date().getFullYear()}
     </React.Fragment>
@@ -46,7 +46,7 @@ export default function AppFooter() {
   return (
     <Typography
       component="footer"
-      sx={{ display: 'flex', bgcolor: 'secondary.light' }}
+      sx={{ display: 'flex', bgcolor: 'secondary.light', color: 'primary.light' }}
     >
       <Container sx={{ my: 8, display: 'flex' }}>
         <Grid container spacing={5}>

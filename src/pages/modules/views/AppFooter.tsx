@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
-import TextField from '../components/TextField';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 function Copyright() {
   return (
@@ -24,11 +24,8 @@ const iconStyle = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  backgroundColor: 'warning.main',
-  mr: 1,
-  '&:hover': {
-    bgcolor: 'warning.dark',
-  },
+  transform: 'scale(2)',
+  mr: 1
 };
 
 const LANGUAGES = [
@@ -60,10 +57,7 @@ export default function AppFooter() {
             >
               <Grid item sx={{ display: 'flex' }}>
                 <Box component="a" target="_blank" href="https://it-it.facebook.com/universeofmine/" sx={iconStyle}>
-                  <img
-                    src="/static/themes/onepirate/appFooterFacebook.png"
-                    alt="Facebook"
-                  />
+                  <FacebookIcon />
                 </Box>
               </Grid>
               <Grid item>

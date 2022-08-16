@@ -4,8 +4,8 @@ import { SxProps } from '@mui/system';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
-import Button from '../components/Button';
 import Typography from '../components/Typography';
+import OnlinePredictionOutlinedIcon from '@mui/icons-material/OnlinePredictionOutlined';
 
 const item: SxProps<Theme> = {
   display: 'flex',
@@ -24,6 +24,7 @@ const number = {
 const image = {
   height: 55,
   my: 4,
+  transform: 'scale(3.5)'
 };
 
 function ProductHowItWorks() {
@@ -39,7 +40,7 @@ function ProductHowItWorks() {
           position: 'relative',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
+          alignItems: 'center'
         }}
       >
         <Box
@@ -61,10 +62,7 @@ function ProductHowItWorks() {
             <Grid item xs={12} md={4}>
               <Box sx={item}>
                 <Box sx={number}>1.</Box>
-                <Box
-                  component="img"
-                  src="/static/themes/onepirate/productHowItWorks1.svg"
-                  alt="suitcase"
+                <OnlinePredictionOutlinedIcon
                   sx={image}
                 />
                 <Typography variant="h5" align="center">
@@ -75,10 +73,7 @@ function ProductHowItWorks() {
             <Grid item xs={12} md={4}>
               <Box sx={item}>
                 <Box sx={number}>2.</Box>
-                <Box
-                  component="img"
-                  src="/static/themes/onepirate/productHowItWorks2.svg"
-                  alt="graph"
+                <OnlinePredictionOutlinedIcon
                   sx={image}
                 />
                 <Typography variant="h5" align="center">
@@ -90,10 +85,7 @@ function ProductHowItWorks() {
             <Grid item xs={12} md={4}>
               <Box sx={item}>
                 <Box sx={number}>3.</Box>
-                <Box
-                  component="img"
-                  src="/static/themes/onepirate/productHowItWorks3.svg"
-                  alt="clock"
+                <OnlinePredictionOutlinedIcon
                   sx={image}
                 />
                 <Typography variant="h5" align="center">

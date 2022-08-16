@@ -5,12 +5,18 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
+import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
+import PaletteOutlinedIcon from '@mui/icons-material/PaletteOutlined';
+import ImagesearchRollerOutlinedIcon from '@mui/icons-material/ImagesearchRollerOutlined';
 
 const item: SxProps<Theme> = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   px: 5,
+  svg: {
+    transform: 'scale(3.5)'
+  }
 };
 
 function ProductValues() {
@@ -29,12 +35,7 @@ function ProductValues() {
         <Grid container spacing={5}>
           <Grid item xs={12} md={4}>
             <Box sx={item}>
-              <Box
-                component="img"
-                src="/static/themes/onepirate/productValues1.svg"
-                alt="suitcase"
-                sx={{ height: 55 }}
-              />
+              <BrushOutlinedIcon />
               <Typography variant="h6" sx={{ my: 5 }}>
                 The best luxury hotels
               </Typography>
@@ -50,12 +51,7 @@ function ProductValues() {
           </Grid>
           <Grid item xs={12} md={4}>
             <Box sx={item}>
-              <Box
-                component="img"
-                src="/static/themes/onepirate/productValues2.svg"
-                alt="graph"
-                sx={{ height: 55 }}
-              />
+              <PaletteOutlinedIcon />
               <Typography variant="h6" sx={{ my: 5 }}>
                 New experiences
               </Typography>
@@ -69,12 +65,7 @@ function ProductValues() {
           </Grid>
           <Grid item xs={12} md={4}>
             <Box sx={item}>
-              <Box
-                component="img"
-                src="/static/themes/onepirate/productValues3.svg"
-                alt="clock"
-                sx={{ height: 55 }}
-              />
+              <ImagesearchRollerOutlinedIcon />
               <Typography variant="h6" sx={{ my: 5 }}>
                 Exclusive rates
               </Typography>

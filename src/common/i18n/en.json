@@ -1,0 +1,15 @@
+{
+  "home": {
+    "title": "Welcome to the Next.js Starter Kit!"
+  },
+  "team": {
+    "title": "Team"
+  },
+  "components": {
+    "table": {
+      "edit_button": "Edit",
+      "prev_page_button": "Previous",
+      "next_page_button": "Next"
+    }
+  }
+}

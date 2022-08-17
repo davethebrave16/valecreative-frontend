@@ -34,7 +34,7 @@ function ProductCTA(props) {
           >
             <Box component="form" onSubmit={handleSubmit} sx={{ maxWidth: 400 }}>
               <Typography variant="h2" component="h2" gutterBottom>
-                {props.data.contacTitle}
+                {props.data.contactTitle}
               </Typography>
               <Typography variant="h5">
                 {props.data.contactSubtitle}

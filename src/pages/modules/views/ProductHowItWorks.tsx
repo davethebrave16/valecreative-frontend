@@ -55,7 +55,7 @@ function ProductHowItWorks(props) {
           }}
         />
         <Typography variant="h4" marked="center" component="h2" sx={{ mb: 14 }}>
-          How it works
+          { props.data.hiwTitle }
         </Typography>
         <div>
           <Grid container spacing={5}>

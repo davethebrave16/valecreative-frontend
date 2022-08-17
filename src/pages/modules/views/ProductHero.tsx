@@ -6,7 +6,7 @@ import ProductHeroLayout from './ProductHeroLayout';
 const backgroundImage =
   'https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&fit=crop&w=1400';
 
-export default function ProductHero() {
+export default function ProductHero(props) {
   return (
     <ProductHeroLayout
       sxBackground={{
@@ -22,7 +22,7 @@ export default function ProductHero() {
         alt="increase priority"
       />
       <Typography color="inherit" align="center" variant="h2" marked="center">
-        Upgrade your Sundays
+        {props.data.headerTitle}
       </Typography>
       <Typography
         color="inherit"
@@ -30,7 +30,7 @@ export default function ProductHero() {
         variant="h5"
         sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
       >
-        Enjoy secret offers up to -70% off the best luxury hotels every Sunday.
+        {props.data.headerSubtitle}
       </Typography>
     </ProductHeroLayout>
   );

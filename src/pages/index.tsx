@@ -3,9 +3,12 @@ import Head from 'next/head'
 import Index from './Home'
 import styles from '../../styles/Home.module.css'
 import { getMainContent } from '../datastore/api/main.api';
-import type { GetStaticProps } from 'next'
 
-const Home: NextPage = () => {
+type Props = {
+  content: Record<string, unknown>
+}
+
+const Home: NextPage<Props> = ({ content }: Props) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -14,17 +17,17 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Index></Index>
+      <Index content={content}></Index>
 
     </div>
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const mainContent = getMainContent()
+export async function getStaticProps() {
+  const mainContent = await getMainContent()
   return {
     props: {
-      fallback: { ...mainContent },
+      content: mainContent.data,
     },
   }
 }

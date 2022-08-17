@@ -8,15 +8,15 @@ import ProductCTA from './modules/views/ProductCTA';
 import AppAppBar from './modules/views/AppAppBar';
 import withRoot from './modules/withRoot';
 
-function Index() {
+function Index(props) {
   return (
     <React.Fragment>
       <AppAppBar />
-      <ProductHero />
+      <ProductHero data={props.content} />
       <ProductValues />
-      <ProductCategories />
+      <ProductCategories data={props.content}  />
       <ProductHowItWorks />
-      <ProductCTA />
+      <ProductCTA data={props.content}  />
       <AppFooter />
     </React.Fragment>
   );

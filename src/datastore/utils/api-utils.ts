@@ -73,7 +73,7 @@ export const post = async (
 
   return axiosClient
     .post(`/${path}`, body, {
-      headers: { ...setAuthorizationHeader(token), ...additionalHeaders },
+      headers: { ...authorizationHeader, ...additionalHeaders },
       cancelToken: abort.token,
     })
     .then((response) => {
@@ -97,7 +97,7 @@ export const patch = async (
 
   return axiosClient
     .patch(`/${path}`, body, {
-      headers: { ...setAuthorizationHeader(token), ...additionalHeaders },
+      headers: { ...authorizationHeader, ...additionalHeaders },
       cancelToken: abort.token,
     })
     .then((response) => {
@@ -121,7 +121,7 @@ export const put = async (
 
   return axiosClient
     .put(`/${path}`, body, {
-      headers: { ...setAuthorizationHeader(token), ...additionalHeaders },
+      headers: { ...authorizationHeader, ...additionalHeaders },
       cancelToken: abort.token,
     })
     .then((response) => {

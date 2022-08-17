@@ -7,7 +7,7 @@ import TextField from '../components/TextField';
 import Snackbar from '../components/Snackbar';
 import Button from '../components/Button';
 
-function ProductCTA() {
+function ProductCTA(props) {
   const [open, setOpen] = React.useState(false);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -34,10 +34,10 @@ function ProductCTA() {
           >
             <Box component="form" onSubmit={handleSubmit} sx={{ maxWidth: 400 }}>
               <Typography variant="h2" component="h2" gutterBottom>
-                Contattami
+                {props.data.contacTitle}
               </Typography>
               <Typography variant="h5">
-                Richiedi un'opera
+                {props.data.contactSubtitle}
               </Typography>
               <TextField
                 noBorder

@@ -27,7 +27,7 @@ const image = {
   transform: 'scale(3.5)'
 };
 
-function ProductHowItWorks() {
+function ProductHowItWorks(props) {
   return (
     <Box
       component="section"
@@ -66,7 +66,7 @@ function ProductHowItWorks() {
                   sx={image}
                 />
                 <Typography variant="h5" align="center">
-                  Appointment every Wednesday 9am.
+                  { props.data.hiw1Description }
                 </Typography>
               </Box>
             </Grid>
@@ -77,8 +77,7 @@ function ProductHowItWorks() {
                   sx={image}
                 />
                 <Typography variant="h5" align="center">
-                  First come, first served. Our offers are in limited quantities, so
-                  be quick.
+                  { props.data.hiw2Description }
                 </Typography>
               </Box>
             </Grid>
@@ -89,8 +88,7 @@ function ProductHowItWorks() {
                   sx={image}
                 />
                 <Typography variant="h5" align="center">
-                  {'New offers every week. New experiences, new surprises. '}
-                  {'Your Sundays will no longer be alike.'}
+                  { props.data.hiw3Description }
                 </Typography>
               </Box>
             </Grid>

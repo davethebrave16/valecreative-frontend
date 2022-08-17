@@ -6,7 +6,7 @@
       "@/api/*": ["src/datastore/api/*"],
       "@/datastore/*": ["src/datastore/*"],
       "@/utils/*": ["src/common/utils/*"],
-      "@/layouts/*": ["src/layouts/*"],
+      "@/managers/*": ["src/managers/*"],
       "@/pages/*": ["src/pages/*"],
     },
     "target": "es5",

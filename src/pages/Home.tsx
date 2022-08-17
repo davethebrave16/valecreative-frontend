@@ -13,9 +13,9 @@ function Index(props) {
     <React.Fragment>
       <AppAppBar />
       <ProductHero data={props.content} />
-      <ProductValues />
+      <ProductValues data={props.values} />
       <ProductCategories data={props.content}  />
-      <ProductHowItWorks />
+      <ProductHowItWorks data={props.hiw} />
       <ProductCTA data={props.content}  />
       <AppFooter />
     </React.Fragment>

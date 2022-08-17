@@ -19,7 +19,7 @@ const item: SxProps<Theme> = {
   }
 };
 
-function ProductValues() {
+function ProductValues(props) {
   return (
     <Box
       component="section"
@@ -37,15 +37,10 @@ function ProductValues() {
             <Box sx={item}>
               <BrushOutlinedIcon />
               <Typography variant="h6" sx={{ my: 5 }}>
-                The best luxury hotels
+                { props.data.value1Title }
               </Typography>
               <Typography variant="h5">
-                {
-                  'From the latest trendy boutique hotel to the iconic palace with XXL pool'
-                }
-                {
-                  ', go for a mini-vacation just a few subway stops away from your home.'
-                }
+                { props.data.value1Description }
               </Typography>
             </Box>
           </Grid>
@@ -53,13 +48,10 @@ function ProductValues() {
             <Box sx={item}>
               <PaletteOutlinedIcon />
               <Typography variant="h6" sx={{ my: 5 }}>
-                New experiences
+                { props.data.value2Title }
               </Typography>
               <Typography variant="h5">
-                {
-                  'Privatize a pool, take a Japanese bath or wake up in 900m2 of garden… '
-                }
-                {'your Sundays will not be alike.'}
+                { props.data.value2Description }
               </Typography>
             </Box>
           </Grid>
@@ -67,11 +59,10 @@ function ProductValues() {
             <Box sx={item}>
               <ImagesearchRollerOutlinedIcon />
               <Typography variant="h6" sx={{ my: 5 }}>
-                Exclusive rates
+                { props.data.value3Title }
               </Typography>
               <Typography variant="h5">
-                {'By registering, you will access specially negotiated rates '}
-                {'that you will not find anywhere else.'}
+                { props.data.value3Description }
               </Typography>
             </Box>
           </Grid>

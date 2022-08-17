@@ -2,13 +2,15 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Index from './Home'
 import styles from '../../styles/Home.module.css'
-import { getMainContent } from '../datastore/api/main.api';
+import { initialize } from '@/managers/initialization.manager';
 
 type Props = {
-  content: Record<string, unknown>
+  mainContent: Record<string, unknown>
+  values: Record<string, unknown>
+  hiw: Record<string, unknown>
 }
 
-const Home: NextPage<Props> = ({ content }: Props) => {
+const Home: NextPage<Props> = ({ mainContent, values, hiw }: Props) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,17 +19,19 @@ const Home: NextPage<Props> = ({ content }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Index content={content}></Index>
+      <Index content={mainContent} values={values} hiw={hiw}></Index>
 
     </div>
   )
 }
 
 export async function getStaticProps() {
-  const mainContent = await getMainContent()
+  const contents = await initialize()
   return {
     props: {
-      content: mainContent.data,
+      mainContent: contents[0].data,
+      values: contents[1].data,
+      hiw: contents[2].data,
     },
   }
 }

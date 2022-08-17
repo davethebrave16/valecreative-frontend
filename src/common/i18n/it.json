@@ -1,0 +1,15 @@
+{
+  "home": {
+    "title": "Benvenuto allo Starter Kit di Next.js!"
+  },
+  "team": {
+    "title": "Squadra"
+  },
+  "components": {
+    "table": {
+      "edit_button": "Modifica",
+      "prev_page_button": "Precedente",
+      "next_page_button": "Prossima"
+    }
+  }
+}

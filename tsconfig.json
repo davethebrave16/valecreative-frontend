@@ -1,5 +1,14 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/common/*": ["src/common/*"],
+      "@/api/*": ["src/datastore/api/*"],
+      "@/datastore/*": ["src/datastore/*"],
+      "@/utils/*": ["src/common/utils/*"],
+      "@/managers/*": ["src/managers/*"],
+      "@/pages/*": ["src/pages/*"],
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

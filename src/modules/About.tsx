@@ -18,7 +18,7 @@ function Index(props: Props) {
             <AppAppBar />
             <Container>
                 <Box sx={{ mt: 7, mb: 12 }}>
-                    <Typography variant="h3" gutterBottom marked="center" align="center" sx={{ color: 'secondary.light' }}>
+                    <Typography variant="h3" gutterBottom marked="center" align="center">
                         {props.about.aboutTitle}
                     </Typography>
                     <Markdown>

@@ -20,10 +20,10 @@ function AppAppBar() {
             variant="h6"
             underline="none"
             color="inherit"
-            href="/premium-themes/onepirate/"
+            href="/"
             sx={{ fontSize: 24 }}
           >
-            {'Vale Creative'}
+            {'Valentina Damiano Creazioni'}
           </Link>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
             <Link
@@ -38,7 +38,7 @@ function AppAppBar() {
             <Link
               variant="h6"
               underline="none"
-              href="/premium-themes/onepirate/sign-up/"
+              href="/about"
               sx={{ ...rightLink, }}
             >
               {'Biografia'}

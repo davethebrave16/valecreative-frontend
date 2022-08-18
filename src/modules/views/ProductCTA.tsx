@@ -6,7 +6,7 @@ import Typography from '../components/Typography';
 import TextField from '../components/TextField';
 import Snackbar from '../components/Snackbar';
 import Button from '../components/Button';
-import { MainContent } from '@/datastore/models/maincontent.model';
+import { MainContent } from '@/models/maincontent.model';
 
 type Props = {
   data: MainContent
@@ -75,7 +75,7 @@ function ProductCTA(props: Props) {
               right: 0,
               bottom: 0,
               width: '100%',
-              background: 'url(/static/themes/onepirate/productCTAImageDots.png)',
+              background: 'url(/productCTAImageDots.png)',
             }}
           />
           <Box

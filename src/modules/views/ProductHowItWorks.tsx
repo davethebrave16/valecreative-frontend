@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
 import OnlinePredictionOutlinedIcon from '@mui/icons-material/OnlinePredictionOutlined';
-import { HowItWorks } from '@/datastore/models/hiw.model';
+import { HowItWorks } from '@/models/hiw.model';
 
 const item: SxProps<Theme> = {
   display: 'flex',
@@ -50,7 +50,7 @@ function ProductHowItWorks(props: Props) {
       >
         <Box
           component="img"
-          src="/static/themes/onepirate/productCurvyLines.png"
+          src="/productCurvyLines.png"
           alt="curvy lines"
           sx={{
             pointerEvents: 'none',

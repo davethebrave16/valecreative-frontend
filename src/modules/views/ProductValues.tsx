@@ -8,7 +8,7 @@ import Typography from '../components/Typography';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import PaletteOutlinedIcon from '@mui/icons-material/PaletteOutlined';
 import ImagesearchRollerOutlinedIcon from '@mui/icons-material/ImagesearchRollerOutlined';
-import { ProductValue } from '@/datastore/models/productvalue.model';
+import { ProductValue } from '@/models/productvalue.model';
 
 const item: SxProps<Theme> = {
   display: 'flex',
@@ -33,7 +33,7 @@ function ProductValues(props: Props) {
       <Container sx={{ mt: 15, mb: 30, display: 'flex', position: 'relative' }}>
         <Box
           component="img"
-          src="/static/themes/onepirate/productCurvyLines.png"
+          src="/productCurvyLines.png"
           alt="curvy lines"
           sx={{ pointerEvents: 'none', position: 'absolute', top: -180 }}
         />

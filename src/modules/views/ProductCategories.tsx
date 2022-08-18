@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
-import { MainContent } from '@/datastore/models/maincontent.model';
+import { MainContent } from '@/models/maincontent.model';
 
 const ImageBackdrop = styled('div')(({ theme }) => ({
   position: 'absolute',
@@ -109,8 +109,7 @@ type Props = {
 export default function ProductCategories(props: Props) {
   return (
     <Container component="section" sx={{ mt: 8, mb: 4 }}>
-      <Typography variant="h4" marked="center" align="center" component="h2"
-      sx={{ color: 'secondary.light' }}>
+      <Typography variant="h4" marked="center" align="center" component="h2">
         {props.data.galleryTitle}
       </Typography>
       <Box sx={{ mt: 8, display: 'flex', flexWrap: 'wrap' }}>

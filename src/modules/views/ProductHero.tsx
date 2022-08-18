@@ -1,4 +1,4 @@
-import { MainContent } from '@/datastore/models/maincontent.model';
+import { MainContent } from '@/models/maincontent.model';
 import * as React from 'react';
 import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';

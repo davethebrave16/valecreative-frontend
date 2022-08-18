@@ -4,10 +4,13 @@
     "paths": {
       "@/common/*": ["src/common/*"],
       "@/api/*": ["src/datastore/api/*"],
+      "@/models/*": ["src/datastore/models/*"],
       "@/datastore/*": ["src/datastore/*"],
       "@/utils/*": ["src/common/utils/*"],
       "@/managers/*": ["src/managers/*"],
       "@/pages/*": ["src/pages/*"],
+      "@/ui/*": ["src/modules/*"],
+      "@/styles/*": ["styles/*"],
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

@@ -7,9 +7,9 @@ import ProductHowItWorks from './views/ProductHowItWorks';
 import ProductCTA from './views/ProductCTA';
 import AppAppBar from './views/AppAppBar';
 import withRoot from './withRoot';
-import { MainContent } from '@/datastore/models/maincontent.model';
-import { ProductValue } from '@/datastore/models/productvalue.model';
-import { HowItWorks } from '@/datastore/models/hiw.model';
+import { MainContent } from '@/models/maincontent.model';
+import { ProductValue } from '@/models/productvalue.model';
+import { HowItWorks } from '@/models/hiw.model';
 
 type Props = {
   content: MainContent

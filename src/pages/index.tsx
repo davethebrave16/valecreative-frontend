@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Index from '../modules/Home'
-import styles from '../../styles/Home.module.css'
+import Index from '@/ui/Home'
+import styles from '@/styles/Home.module.css'
 import { initialize } from '@/managers/initialization.manager';
-import { MainContent } from '@/datastore/models/maincontent.model';
-import { ProductValue } from '@/datastore/models/productvalue.model';
-import { HowItWorks } from '@/datastore/models/hiw.model';
+import { MainContent } from '@/models/maincontent.model';
+import { ProductValue } from '@/models/productvalue.model';
+import { HowItWorks } from '@/models/hiw.model';
 
 type Props = {
   mainContent: MainContent
@@ -17,7 +17,7 @@ const Home: NextPage<Props> = ({ mainContent, values, hiw }: Props) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Vale Creative</title>
+        <title>Valentina Damiano Creazioni</title>
         <meta name="description" content="Vale Creative Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

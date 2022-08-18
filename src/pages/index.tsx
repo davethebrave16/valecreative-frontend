@@ -3,11 +3,14 @@ import Head from 'next/head'
 import Index from './Home'
 import styles from '../../styles/Home.module.css'
 import { initialize } from '@/managers/initialization.manager';
+import { MainContent } from '@/datastore/models/maincontent.model';
+import { ProductValue } from '@/datastore/models/productvalue.model';
+import { HowItWorks } from '@/datastore/models/hiw.model';
 
 type Props = {
-  mainContent: Record<string, unknown>
-  values: Record<string, unknown>
-  hiw: Record<string, unknown>
+  mainContent: MainContent
+  values: ProductValue
+  hiw: HowItWorks
 }
 
 const Home: NextPage<Props> = ({ mainContent, values, hiw }: Props) => {

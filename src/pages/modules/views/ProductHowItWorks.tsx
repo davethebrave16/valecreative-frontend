@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
 import OnlinePredictionOutlinedIcon from '@mui/icons-material/OnlinePredictionOutlined';
+import { HowItWorks } from '@/datastore/models/hiw.model';
 
 const item: SxProps<Theme> = {
   display: 'flex',
@@ -27,7 +28,11 @@ const image = {
   transform: 'scale(3.5)'
 };
 
-function ProductHowItWorks(props) {
+type Props = {
+  data: HowItWorks
+}
+
+function ProductHowItWorks(props: Props) {
   return (
     <Box
       component="section"

@@ -6,8 +6,13 @@ import Typography from '../components/Typography';
 import TextField from '../components/TextField';
 import Snackbar from '../components/Snackbar';
 import Button from '../components/Button';
+import { MainContent } from '@/datastore/models/maincontent.model';
 
-function ProductCTA(props) {
+type Props = {
+  data: MainContent
+}
+
+function ProductCTA(props: Props) {
   const [open, setOpen] = React.useState(false);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {

@@ -1,71 +1,64 @@
-import { HeroIcon } from '@/common/constants/heroicon.type'
-import { HomeIcon, PhoneIcon, UserIcon } from '@heroicons/react/outline'
-
 export type NavigationItemType = {
   name: string
   href: string
-  icon?: HeroIcon
   sublinks?: NavigationItemType[]
 }
 
 export const home: NavigationItemType = {
   name: '',
-  href: '/',
-  icon: HomeIcon,
+  href: '/'
 }
 
 const services: NavigationItemType = {
   name: 'Services',
-  href: '/services',
+  href: '/services'
 }
 
 const about: NavigationItemType = {
   name: 'About Us',
-  href: '',
+  href: ''
 }
 
 const team: NavigationItemType = {
   name: 'Our Team',
-  href: '/team',
+  href: '/team'
 }
 
 const contact: NavigationItemType = {
   name: 'Contact Us',
-  href: '/contact',
-  icon: PhoneIcon,
+  href: '/contact'
 }
 
 const events: NavigationItemType = {
   name: 'Events',
-  href: '/events',
+  href: '/events'
 }
 
 const profile: NavigationItemType = {
   name: 'Profile',
-  href: '/profile',
+  href: '/profile'
 }
 
 const logout: NavigationItemType = {
   name: 'Logout',
-  href: '/logout', // has a redirect in Next configuration file.
+  href: '/logout'
 }
 
 export const login: NavigationItemType = {
   name: 'Login',
-  href: '/login', // has a redirect in Next configuration file.
+  href: '/login'
 }
 
 export const signup: NavigationItemType = {
   name: 'Sign Up',
-  href: '/signup', // has a redirect in Next configuration file.
+  href: '/signup'
 }
 
 // Top-level navigation items
 export const accountGroup: NavigationItemType = {
   name: 'Account',
   href: profile.href,
-  sublinks: [profile, logout],
-  icon: UserIcon,
+  sublinks: [profile, logout]
 }
 
 const aboutUsGroup: NavigationItemType = {

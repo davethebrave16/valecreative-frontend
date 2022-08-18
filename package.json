@@ -9,9 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.2.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "11.10.0",
     "@mui/base": "5.0.0-alpha.92",
@@ -33,12 +30,20 @@
     "@mui/x-date-pickers-pro": "^5.0.0-beta.4",
     "@mui/x-license-pro": "^5.15.0",
     "axios": "0.27.2",
-    "swr": "2.0.0-beta.6",
+    "final-form": "^4.20.7",
     "lodash": "4.17.21",
-    "qs": "6.11.0"
+    "markdown-to-jsx": "^7.1.7",
+    "next": "12.2.4",
+    "qs": "6.11.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-final-form": "^6.5.9",
+    "swr": "2.0.0-beta.6"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.183",
     "@types/node": "18.6.5",
+    "@types/qs": "^6.9.7",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "eslint": "8.21.0",

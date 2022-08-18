@@ -8,6 +8,7 @@ import Typography from '../components/Typography';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import PaletteOutlinedIcon from '@mui/icons-material/PaletteOutlined';
 import ImagesearchRollerOutlinedIcon from '@mui/icons-material/ImagesearchRollerOutlined';
+import { ProductValue } from '@/datastore/models/productvalue.model';
 
 const item: SxProps<Theme> = {
   display: 'flex',
@@ -19,7 +20,11 @@ const item: SxProps<Theme> = {
   }
 };
 
-function ProductValues(props) {
+type Props = {
+  data: ProductValue
+}
+
+function ProductValues(props: Props) {
   return (
     <Box
       component="section"

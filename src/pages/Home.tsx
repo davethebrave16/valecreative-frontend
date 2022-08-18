@@ -7,8 +7,17 @@ import ProductHowItWorks from './modules/views/ProductHowItWorks';
 import ProductCTA from './modules/views/ProductCTA';
 import AppAppBar from './modules/views/AppAppBar';
 import withRoot from './modules/withRoot';
+import { MainContent } from '@/datastore/models/maincontent.model';
+import { ProductValue } from '@/datastore/models/productvalue.model';
+import { HowItWorks } from '@/datastore/models/hiw.model';
 
-function Index(props) {
+type Props = {
+  content: MainContent
+  values: ProductValue
+  hiw: HowItWorks
+}
+
+function Index(props: Props) {
   return (
     <React.Fragment>
       <AppAppBar />

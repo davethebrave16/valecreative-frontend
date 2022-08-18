@@ -1,12 +1,16 @@
+import { MainContent } from '@/datastore/models/maincontent.model';
 import * as React from 'react';
-import Button from '../components/Button';
 import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
 
 const backgroundImage =
   'https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&fit=crop&w=1400';
 
-export default function ProductHero(props) {
+type Props = {
+  data: MainContent
+}
+
+export default function ProductHero(props: Props) {
   return (
     <ProductHeroLayout
       sxBackground={{

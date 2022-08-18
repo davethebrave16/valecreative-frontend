@@ -49,7 +49,7 @@ function ProductCTA(props: Props) {
                   variant="contained"
                   sx={{ width: '100%' }}
                 >
-                  Scrivimi
+                  {props.data.contactButton}
                 </Button>
               </Link>
             </Box>

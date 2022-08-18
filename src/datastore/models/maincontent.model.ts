@@ -4,4 +4,6 @@ export type MainContent = {
   galleryTitle: string
   contactTitle: string
   contactSubtitle: string
+  contactButton: string
+  contactSuccessMessage: string
 }

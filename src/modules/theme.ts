@@ -35,7 +35,7 @@ const rawTheme = createTheme({
     fontWeightRegular: 400, // Work Sans
     fontWeightMedium: 700, // Roboto Condensed
   },
-});
+}, {index: 1});
 
 const fontHeader = {
   color: rawTheme.palette.text.primary,

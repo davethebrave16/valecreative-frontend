@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Index from './Home'
+import Index from '../modules/Home'
 import styles from '../../styles/Home.module.css'
 import { initialize } from '@/managers/initialization.manager';
 import { MainContent } from '@/datastore/models/maincontent.model';

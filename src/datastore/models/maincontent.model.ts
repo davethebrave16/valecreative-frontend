@@ -6,6 +6,7 @@ export type MainContent = {
   contactTitle: string
   contactSubtitle: string
   contactButton: string
+  contactImageUrl: string
   contactSuccessMessage: string
   contactPageTitle: string
   contactPageSubtitle: string

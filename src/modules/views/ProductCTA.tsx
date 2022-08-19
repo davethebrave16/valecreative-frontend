@@ -7,21 +7,17 @@ import Typography from '../components/Typography';
 import Button from '../components/Button';
 import { MainContent } from '@/models/maincontent.model';
 
+let image =
+  'https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?auto=format&fit=crop&w=750';
+
 type Props = {
   data: MainContent
 }
 
 function ProductCTA(props: Props) {
-  const [open, setOpen] = React.useState(false);
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  if (props.data.contactImageUrl) {
+    image = props.data.contactImageUrl
+  }
 
   return (
     <Container component="section" sx={{ mt: 10, mb: 10, display: 'flex' }}>
@@ -36,7 +32,7 @@ function ProductCTA(props: Props) {
               px: 3,
             }}
           >
-            <Box component="form" onSubmit={handleSubmit} sx={{ maxWidth: 400 }}>
+            <Box component="form" sx={{ maxWidth: 400 }}>
               <Typography variant="h2" component="h2" gutterBottom>
                 {props.data.contactTitle}
               </Typography>
@@ -74,7 +70,7 @@ function ProductCTA(props: Props) {
           />
           <Box
             component="img"
-            src="https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?auto=format&fit=crop&w=750"
+            src={image}
             alt="call to action"
             sx={{
               position: 'absolute',

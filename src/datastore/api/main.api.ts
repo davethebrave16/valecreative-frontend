@@ -2,14 +2,14 @@ import { MainContent } from '@/datastore/models/maincontent.model'
 import { ProductValue } from '@/datastore/models/productvalue.model'
 import { HowItWorks } from '@/datastore/models/hiw.model'
 import { mainContent, homeValues, homeHiw } from '@/datastore/constants/endpoints'
-import { get } from '@/datastore/utils/api-utils'
+import { get, addImageBaseUrl } from '@/datastore/utils/api-utils'
 import { parseJSON } from '@/common/utils/mapper-utils'
 
 async function getMainContent(includeImages: boolean = false) {
   const { data, error } = await get(mainContent + (includeImages ? '?populate=*' : ''))
   const result: MainContent = data ? parseJSON<MainContent>(data?.attributes) : data
-  console.log(data)
-  result.headerImageUrl = "http://localhost:1337" + data?.attributes.headerImage.data.attributes.url
+  result.headerImageUrl = addImageBaseUrl(data?.attributes.headerImage.data.attributes.url)
+  result.contactImageUrl = addImageBaseUrl(data?.attributes.contactImage.data.attributes.url)
 
   return {
     data: result,

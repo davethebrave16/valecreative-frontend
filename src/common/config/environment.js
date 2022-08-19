@@ -8,5 +8,6 @@ export const clientTokens = isProduction ? {} : {}
 
 export const apiUrl = process.env.NEXT_PUBLIC_API_URL
 export const authToken = process.env.NEXT_PUBLIC_AUTH_TOKEN
+export const imageBaseUrl = process.env.NEXT_PUBLIC_IMAGE_BASE_URL
 
 export const usingJWTCookies = false

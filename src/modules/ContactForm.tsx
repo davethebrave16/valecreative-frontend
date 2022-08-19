@@ -14,6 +14,8 @@ import FormFeedback from '@/ui/form/FormFeedback';
 import withRoot from './withRoot';
 import { postContact } from '@/api/contact.api';
 import { MainContent } from '@/models/maincontent.model';
+import { TextareaAutosize } from '@mui/base';
+import RFTextArea from './form/RFTextArea';
 
 type Props = {
     content: MainContent
@@ -24,13 +26,15 @@ async function sendContactForm(
     email: string,
     phone: string,
     subject: string,
+    message: string,
     setSent: Function,
     setSuccess: Function) {
     const result = await postContact(
         name,
         email,
         phone,
-        subject
+        subject,
+        message
     )
     setSent(false)
     setSuccess(true)
@@ -41,7 +45,7 @@ function Index(props: Props) {
     const [success, setSuccess] = React.useState(false)
 
     const validate = (values) => {
-        const errors = required(['name', 'email', 'subject'], values);
+        const errors = required(['name', 'email', 'subject', 'message'], values);
 
         if (!errors.email) {
             const emailError = email(values.email);
@@ -55,7 +59,14 @@ function Index(props: Props) {
 
     const handleSubmit = (values) => {
         setSent(true)
-        sendContactForm(values.name, values.email, values.phone, values.subject, setSent, setSuccess)
+        sendContactForm(
+            values.name, 
+            values.email, 
+            values.phone, 
+            values.subject, 
+            values.message, 
+            setSent, 
+            setSuccess)
     };
 
     const handleSuccessClose = () => {
@@ -123,6 +134,16 @@ function Index(props: Props) {
                                 name="subject"
                                 autoComplete="subject"
                                 label="Oggetto"
+                                margin="normal"
+                            />
+                            <Field
+                                fullWidth
+                                component={RFTextArea}
+                                disabled={submitting || sent}
+                                required
+                                name="message"
+                                autoComplete="message"
+                                label="Messaggio"
                                 margin="normal"
                             />
                             <FormSpy subscription={{ submitError: true }}>

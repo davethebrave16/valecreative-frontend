@@ -3,14 +3,14 @@ import { post } from '@/datastore/utils/api-utils'
 import { parseJSON } from '@/common/utils/mapper-utils'
 import { ContactForm } from '@/models/contactform.model'
 
-async function postContact(name: string, email: string, phone: string, subject: string) {
+async function postContact(name: string, email: string, phone: string, subject: string, message: string) {
   const body = {
     data: {
       email,
       senderName: name,
       phone,
       subject,
-      message: "prova prova"
+      message
     }
   }
   const { data, error } = await post(messages, body)

@@ -21,6 +21,14 @@ type Props = {
     content: MainContent
 }
 
+type Value = {
+    name: string
+    subject: string
+    email: string
+    phone: string
+    message: string
+  }
+
 async function sendContactForm(
     name: string,
     email: string,
@@ -44,7 +52,7 @@ function Index(props: Props) {
     const [sent, setSent] = React.useState(false)
     const [success, setSuccess] = React.useState(false)
 
-    const validate = (values) => {
+    const validate = (values: Value) => {
         const errors = required(['name', 'email', 'subject', 'message'], values);
 
         if (!errors.email) {
@@ -57,7 +65,7 @@ function Index(props: Props) {
         return errors;
     };
 
-    const handleSubmit = (values) => {
+    const handleSubmit = (values: Value) => {
         setSent(true)
         sendContactForm(
             values.name, 

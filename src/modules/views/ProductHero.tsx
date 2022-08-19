@@ -3,7 +3,7 @@ import * as React from 'react';
 import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
 
-const backgroundImage =
+let backgroundImage =
   'https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&fit=crop&w=1400';
 
 type Props = {
@@ -11,6 +11,10 @@ type Props = {
 }
 
 export default function ProductHero(props: Props) {
+  if (props.data.headerImageUrl) {
+      backgroundImage = props.data.headerImageUrl
+  }
+
   return (
     <ProductHeroLayout
       sxBackground={{

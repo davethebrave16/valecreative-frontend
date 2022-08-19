@@ -1,6 +1,7 @@
 export type MainContent = {
   headerTitle: string
   headerSubtitle: string
+  headerImageUrl: string
   galleryTitle: string
   contactTitle: string
   contactSubtitle: string

@@ -5,11 +5,14 @@ import { mainContent, homeValues, homeHiw } from '@/datastore/constants/endpoint
 import { get } from '@/datastore/utils/api-utils'
 import { parseJSON } from '@/common/utils/mapper-utils'
 
-async function getMainContent() {
-  const { data, error } = await get(mainContent)
+async function getMainContent(includeImages: boolean = false) {
+  const { data, error } = await get(mainContent + (includeImages ? '?populate=*' : ''))
+  const result: MainContent = data ? parseJSON<MainContent>(data?.attributes) : data
+  console.log(data)
+  result.headerImageUrl = "http://localhost:1337" + data?.attributes.headerImage.data.attributes.url
 
   return {
-    data: data ? parseJSON<MainContent>(data?.attributes) : data,
+    data: result,
     isLoading: !error && !data,
     isError: error,
   }

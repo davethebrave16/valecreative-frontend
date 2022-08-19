@@ -14,7 +14,6 @@ import FormFeedback from '@/ui/form/FormFeedback';
 import withRoot from './withRoot';
 import { postContact } from '@/api/contact.api';
 import { MainContent } from '@/models/maincontent.model';
-import { TextareaAutosize } from '@mui/base';
 import RFTextArea from './form/RFTextArea';
 
 type Props = {

@@ -70,7 +70,6 @@ export const post = async (
 ) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces()
 
-  console.log(authToken)
   return axiosClient
     .post(`/${path}`, body, {
       headers: { ...authorizationHeader, ...additionalHeaders },

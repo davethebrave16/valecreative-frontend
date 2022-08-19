@@ -13,14 +13,14 @@ import FormFeedback from '@/ui/form/FormFeedback';
 import withRoot from './withRoot';
 import { postContact } from '@/api/contact.api';
 
-async function sendContactForm(name: string, email: string, phone: string, subject: string, setSent) {
+async function sendContactForm(name: string, email: string, phone: string, subject: string, setSent: Function) {
     const result = await postContact(
         name,
         email,
         phone,
         subject
     )
-    //setSent(false)
+    setSent(false)
 }
 
 function Index() {
@@ -40,8 +40,7 @@ function Index() {
     };
 
     const handleSubmit = (values) => {
-        console.log(values)
-        //setSent(true);
+        setSent(true)
         sendContactForm(values.name, values.email, values.phone, values.subject, setSent)
     };
 

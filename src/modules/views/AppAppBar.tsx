@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import AppBar from '../components/AppBar';
 import Toolbar from '../components/Toolbar';
+import Image from 'next/image';
 
 const rightLink = {
   fontSize: 16,
@@ -23,7 +24,12 @@ function AppAppBar() {
             href="/"
             sx={{ fontSize: 24 }}
           >
-            {'Valentina Damiano Creazioni'}
+            <Box
+              component="img"
+              src="/appbarlogo.png"
+              alt="appbarlogo"
+              sx={{ height: 50, mt: 1 }}
+            />
           </Link>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
             <Link

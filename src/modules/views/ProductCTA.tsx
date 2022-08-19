@@ -1,10 +1,9 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
-import TextField from '../components/TextField';
-import Snackbar from '../components/Snackbar';
 import Button from '../components/Button';
 import { MainContent } from '@/models/maincontent.model';
 
@@ -44,20 +43,15 @@ function ProductCTA(props: Props) {
               <Typography variant="h5">
                 {props.data.contactSubtitle}
               </Typography>
-              <TextField
-                noBorder
-                placeholder="Your email"
-                variant="standard"
-                sx={{ width: '100%', mt: 3, mb: 2 }}
-              />
-              <Button
-                type="submit"
-                color="primary"
-                variant="contained"
-                sx={{ width: '100%' }}
-              >
-                Invia
-              </Button>
+              <Link href="/contactme">
+                <Button
+                  color="primary"
+                  variant="contained"
+                  sx={{ width: '100%' }}
+                >
+                  {props.data.contactButton}
+                </Button>
+              </Link>
             </Box>
           </Box>
         </Grid>
@@ -94,11 +88,6 @@ function ProductCTA(props: Props) {
           />
         </Grid>
       </Grid>
-      <Snackbar
-        open={open}
-        closeFunc={handleClose}
-        message="We will send you our best offers, once a week."
-      />
     </Container>
   );
 }

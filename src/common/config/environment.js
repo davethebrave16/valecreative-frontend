@@ -6,7 +6,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 // These are all exposed by the client, so there's no way to protect them anyways.
 export const clientTokens = isProduction ? {} : {}
 
-export const apiUrl = process.env.API_URL
-export const authToken = process.env.AUTH_TOKEN
+export const apiUrl = process.env.NEXT_PUBLIC_API_URL
+export const authToken = process.env.NEXT_PUBLIC_AUTH_TOKEN
 
 export const usingJWTCookies = false

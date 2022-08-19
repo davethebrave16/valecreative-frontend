@@ -66,7 +66,6 @@ export const post = async (
   path: string,
   body: Record<string, unknown>,
   additionalHeaders: Record<string, string> = {},
-  { token }: { token?: string; parameters?: Record<string, unknown> } = {},
   axiosClient = BaseAPI
 ) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces()

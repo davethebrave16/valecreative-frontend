@@ -5,6 +5,7 @@ import ButtonBase from '@mui/material/ButtonBase';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
 import { MainContent } from '@/models/maincontent.model';
+import { ArtworkType } from '@/models/artworktype.model';
 
 const ImageBackdrop = styled('div')(({ theme }) => ({
   position: 'absolute',
@@ -103,7 +104,8 @@ const images = [
 ];
 
 type Props = {
-  data: MainContent
+  data: MainContent,
+  categories: ArtworkType[]
 }
 
 export default function ProductCategories(props: Props) {
@@ -113,11 +115,11 @@ export default function ProductCategories(props: Props) {
         {props.data.galleryTitle}
       </Typography>
       <Box sx={{ mt: 8, display: 'flex', flexWrap: 'wrap' }}>
-        {images.map((image) => (
+        {props.categories.map((image, index) => (
           <ImageIconButton
             key={image.title}
             style={{
-              width: image.width,
+              width: (index % 3 == 1) ? '40%' : '30%',
             }}
           >
             <Box
@@ -129,7 +131,7 @@ export default function ProductCategories(props: Props) {
                 bottom: 0,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center 40%',
-                backgroundImage: `url(${image.url})`,
+                backgroundImage: `url(${image.picture})`,
               }}
             />
             <ImageBackdrop className="imageBackdrop" />

@@ -10,11 +10,13 @@ import withRoot from './withRoot';
 import { MainContent } from '@/models/maincontent.model';
 import { ProductValue } from '@/models/productvalue.model';
 import { HowItWorks } from '@/models/hiw.model';
+import { ArtworkType } from '@/models/artworktype.model';
 
 type Props = {
   content: MainContent
   values: ProductValue
-  hiw: HowItWorks
+  hiw: HowItWorks,
+  artworkTypes: ArtworkType[]
 }
 
 function Index(props: Props) {
@@ -23,7 +25,7 @@ function Index(props: Props) {
       <AppAppBar />
       <ProductHero data={props.content} />
       <ProductValues data={props.values} />
-      <ProductCategories data={props.content}  />
+      <ProductCategories data={props.content} categories={props.artworkTypes}  />
       <ProductHowItWorks data={props.hiw} />
       <ProductCTA data={props.content}  />
       <AppFooter />

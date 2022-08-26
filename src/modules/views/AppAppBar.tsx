@@ -36,7 +36,7 @@ function AppAppBar() {
               color="inherit"
               variant="h6"
               underline="none"
-              href="/premium-themes/onepirate/sign-in/"
+              href="/artworks"
               sx={rightLink}
             >
               {'Opere'}

@@ -5,7 +5,9 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
-import OnlinePredictionOutlinedIcon from '@mui/icons-material/OnlinePredictionOutlined';
+import FaceRetouchingNaturalOutlinedIcon from '@mui/icons-material/FaceRetouchingNaturalOutlined';
+import FlareOutlinedIcon from '@mui/icons-material/FlareOutlined';
+import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
 import { HowItWorks } from '@/models/hiw.model';
 
 const item: SxProps<Theme> = {
@@ -67,7 +69,7 @@ function ProductHowItWorks(props: Props) {
             <Grid item xs={12} md={4}>
               <Box sx={item}>
                 <Box sx={number}>1.</Box>
-                <OnlinePredictionOutlinedIcon
+                <FaceRetouchingNaturalOutlinedIcon
                   sx={image}
                 />
                 <Typography variant="h5" align="center">
@@ -78,7 +80,7 @@ function ProductHowItWorks(props: Props) {
             <Grid item xs={12} md={4}>
               <Box sx={item}>
                 <Box sx={number}>2.</Box>
-                <OnlinePredictionOutlinedIcon
+                <FlareOutlinedIcon
                   sx={image}
                 />
                 <Typography variant="h5" align="center">
@@ -89,7 +91,7 @@ function ProductHowItWorks(props: Props) {
             <Grid item xs={12} md={4}>
               <Box sx={item}>
                 <Box sx={number}>3.</Box>
-                <OnlinePredictionOutlinedIcon
+                <AutoAwesomeOutlinedIcon
                   sx={image}
                 />
                 <Typography variant="h5" align="center">

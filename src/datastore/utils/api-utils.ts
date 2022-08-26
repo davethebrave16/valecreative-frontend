@@ -1,7 +1,7 @@
 import axios from 'axios'
 import lodashGet from 'lodash/get'
 import { networkErrorMessages } from '@/common/constants/messages'
-import { apiUrl, authToken } from '@/common/config/environment'
+import { apiUrl, authToken, imageBaseUrl } from '@/common/config/environment'
 import qs from 'qs'
 
 const baseAxiosConfig = {
@@ -150,4 +150,8 @@ export const getServerErrorMessage = (errorObject: Error): string => {
   )
 
   return errorMessage
+}
+
+export const addImageBaseUrl = (url: string): string => {
+  return imageBaseUrl +  url
 }

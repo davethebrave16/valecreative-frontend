@@ -1,9 +1,10 @@
 import { MainContent } from '@/models/maincontent.model';
+import Image from 'next/image';
 import * as React from 'react';
 import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
 
-const backgroundImage =
+let backgroundImage =
   'https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&fit=crop&w=1400';
 
 type Props = {
@@ -11,6 +12,10 @@ type Props = {
 }
 
 export default function ProductHero(props: Props) {
+  if (props.data.headerImageUrl) {
+      backgroundImage = props.data.headerImageUrl
+  }
+
   return (
     <ProductHeroLayout
       sxBackground={{
@@ -20,10 +25,10 @@ export default function ProductHero(props: Props) {
       }}
     >
       {/* Increase the network loading priority of the background image. */}
-      <img
-        style={{ display: 'none' }}
+      <Image
         src={backgroundImage}
         alt="increase priority"
+        layout="fill"
       />
       <Typography color="inherit" align="center" variant="h2" marked="center">
         {props.data.headerTitle}

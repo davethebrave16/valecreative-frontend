@@ -2,7 +2,7 @@ import { getHowItWorks, getMainContent, getProductValues } from "@/api/main.api"
 
 async function initialize() {
     const allData = await Promise.all([
-        getMainContent(),
+        getMainContent(true),
         getProductValues(),
         getHowItWorks()
     ])

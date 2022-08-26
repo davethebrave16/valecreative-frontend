@@ -8,8 +8,10 @@ import { parseJSON } from '@/common/utils/mapper-utils'
 async function getMainContent(includeImages: boolean = false) {
   const { data, error } = await get(mainContent + (includeImages ? '?populate=*' : ''))
   const result: MainContent = data ? parseJSON<MainContent>(data?.attributes) : data
-  result.headerImageUrl = addImageBaseUrl(data?.attributes.headerImage.data.attributes.url)
-  result.contactImageUrl = addImageBaseUrl(data?.attributes.contactImage.data.attributes.url)
+  if (includeImages) {
+    result.headerImageUrl = addImageBaseUrl(data?.attributes.headerImage.data.attributes.url)
+    result.contactImageUrl = addImageBaseUrl(data?.attributes.contactImage.data.attributes.url)
+  }
 
   return {
     data: result,

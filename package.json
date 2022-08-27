@@ -16,10 +16,10 @@
     "@mui/icons-material": "^5.8.4",
     "@mui/joy": "5.0.0-alpha.40",
     "@mui/lab": "5.0.0-alpha.94",
-    "@mui/material": "^5.10.0",
+    "@mui/material": "^5.10.2",
     "@mui/material-next": "6.0.0-alpha.48",
     "@mui/styled-engine": "^5.10.0",
-    "@mui/styled-engine-sc": "^5.10.0",
+    "@mui/styled-engine-sc": "^5.10.1",
     "@mui/styles": "^5.9.3",
     "@mui/system": "^5.10.0",
     "@mui/types": "^7.1.5",
@@ -38,6 +38,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-final-form": "^6.5.9",
+    "react-router-dom": "^6.3.0",
+    "styled-components": "^5.3.5",
     "swr": "2.0.0-beta.6"
   },
   "devDependencies": {

@@ -15,7 +15,7 @@ function AppAppBar() {
     <div>
       <AppBar position="fixed">
         <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <Box sx={{ flex: 1 }} />
+          <Box sx={{ flex: 1, display: { xs: 'none', sm: 'none', md: 'block' } }} />
           <Link
             variant="h6"
             underline="none"

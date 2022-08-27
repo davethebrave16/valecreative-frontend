@@ -38,6 +38,7 @@ export async function getStaticProps() {
       content: contents[0].data,
       artworks: contents[1].data
     },
+    revalidate: 60
   }
 }
 

@@ -29,6 +29,7 @@ export async function getStaticProps() {
     props: {
       about: contents.data
     },
+    revalidate: 60
   }
 }
 

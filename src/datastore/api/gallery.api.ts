@@ -51,8 +51,8 @@ async function getArtworks(type?: string, includeImages: boolean = false) {
             technique: item.attributes.technique,
             year: item.attributes.year,
             picture: addImageBaseUrl(item.attributes.picture.data?.attributes.url),
-            type: item.attributes.type.data?.attributes.title,
-            typeId: item.attributes.type.data?.id
+            type: (item.attributes.type.data) ? item.attributes.type.data.attributes.title : '',
+            typeId: (item.attributes.type.data) ? item.attributes.type.data.id : 0
         }
         return element
     })

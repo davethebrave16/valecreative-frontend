@@ -7,6 +7,7 @@ import { MainContent } from '@/models/maincontent.model';
 import { getGallery } from '@/managers/initialization.manager';
 import { Artwork } from '@/models/artwork.model';
 import { useRouter } from 'next/router';
+import Cookie from '@/ui/Cookie';
 
 type Props = {
   content: MainContent,
@@ -24,6 +25,7 @@ const ArtworkList: NextPage<Props> = ({ content, artworks }: Props) => {
     <div className={styles.container}>
       <Header></Header>
       <Index content={content} artworks={artworks}></Index>
+      <Cookie></Cookie>
     </div>
     
   );

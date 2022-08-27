@@ -7,6 +7,7 @@ import { ProductValue } from '@/models/productvalue.model';
 import { HowItWorks } from '@/models/hiw.model';
 import Header from '@/ui/Header';
 import { ArtworkType } from '@/models/artworktype.model';
+import Cookie from '@/ui/Cookie';
 
 type Props = {
   mainContent: MainContent
@@ -20,6 +21,7 @@ const Home: NextPage<Props> = ({ mainContent, values, hiw, artworkTypes }: Props
     <div className={styles.container}>
       <Header></Header>
       <Index content={mainContent} values={values} hiw={hiw} artworkTypes={artworkTypes}></Index>
+      <Cookie></Cookie>
     </div>
   )
 }

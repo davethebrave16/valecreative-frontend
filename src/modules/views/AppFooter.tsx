@@ -10,9 +10,7 @@ function Copyright() {
   return (
     <React.Fragment>
       {'© '}
-      <Link color="inherit" href="https://mui.com/">
-        Vale Creative
-      </Link>{' '}
+      Vale Creative {' '}
       {new Date().getFullYear()}
     </React.Fragment>
   );

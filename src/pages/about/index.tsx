@@ -5,6 +5,7 @@ import Index from '@/ui/About'
 import { getAbout } from "@/api/about.api"
 import { About } from '@/models/about.model';
 import Header from '@/ui/Header';
+import Cookie from '@/ui/Cookie';
 
 type Props = {
   about: About
@@ -16,6 +17,7 @@ const About: NextPage<Props> = ({ about }: Props) => {
     <div className={styles.container}>
       <Header></Header>
       <Index about={about}></Index>
+      <Cookie></Cookie>
     </div>
     
   );
@@ -27,6 +29,7 @@ export async function getStaticProps() {
     props: {
       about: contents.data
     },
+    revalidate: 60
   }
 }
 

@@ -20,7 +20,7 @@ async function getArtworkTypes(showInHome: boolean = false, includeImages: boole
         const element: ArtworkType = {
             id: item.id,
             title: item.attributes.title,
-            picture: addImageBaseUrl(item.attributes.picture.data.attributes.url)
+            picture: addImageBaseUrl(item.attributes.picture.data?.attributes.url)
         }
         return element
     })
@@ -50,9 +50,9 @@ async function getArtworks(type?: string, includeImages: boolean = false) {
             size: item.attributes.size,
             technique: item.attributes.technique,
             year: item.attributes.year,
-            picture: addImageBaseUrl(item.attributes.picture.data.attributes.url),
-            type: item.attributes.type.data.attributes.title,
-            typeId: item.attributes.type.data.id
+            picture: addImageBaseUrl(item.attributes.picture.data?.attributes.url),
+            type: item.attributes.type.data?.attributes.title,
+            typeId: item.attributes.type.data?.id
         }
         return element
     })

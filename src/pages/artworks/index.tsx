@@ -6,6 +6,7 @@ import Header from '@/ui/Header';
 import { MainContent } from '@/models/maincontent.model';
 import { getGallery } from '@/managers/initialization.manager';
 import { Artwork } from '@/models/artwork.model';
+import { useRouter } from 'next/router';
 
 type Props = {
   content: MainContent,
@@ -13,6 +14,11 @@ type Props = {
 }
 
 const ArtworkList: NextPage<Props> = ({ content, artworks }: Props) => {
+
+  const type = useRouter().query.type
+  if (type) {
+    artworks = artworks.filter(item => String(item.typeId) === type)
+  }
 
   return (
     <div className={styles.container}>

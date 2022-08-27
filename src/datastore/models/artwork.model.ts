@@ -7,4 +7,5 @@ export type Artwork = {
     size: string
     picture: string
     type: string
+    typeId: number
 }

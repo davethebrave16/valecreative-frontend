@@ -2,8 +2,9 @@ import * as React from 'react';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Typography from '@/ui/components/Typography';
-import AppFooter from './views/AppFooter';
-import AppAppBar from './views/AppAppBar';
+import AppFooter from '@/ui/views/AppFooter';
+import AppAppBar from '@/ui/views/AppAppBar';
+import ArtworkDialog from '@/ui/views/ArtworkDialog';
 import withRoot from './withRoot';
 import { MainContent } from '@/models/maincontent.model';
 import { Artwork } from '@/models/artwork.model';
@@ -19,6 +20,18 @@ type Props = {
 }
 
 function Index(props: Props) {
+    const [openArtworkDialog, setOpenArtworkDialog] = React.useState(false);
+    let selectedItem: Artwork = props.artworks[0]
+
+    const handleClickOpen = (index: number) => {
+        selectedItem = props.artworks[index]
+        setOpenArtworkDialog(true);
+    };
+
+    const handleClose = () => {
+        setOpenArtworkDialog(false);
+    };
+
     return (
         <React.Fragment>
             <AppAppBar />
@@ -28,7 +41,7 @@ function Index(props: Props) {
                         {props.content.galleryTitle}
                     </Typography>
                     <ImageList>
-                        {props.artworks.map((item) => (
+                        {props.artworks.map((item, index) => (
                             <ImageListItem key={item.id}>
                                 <img
                                     src={item.picture}
@@ -43,6 +56,7 @@ function Index(props: Props) {
                                         <IconButton
                                             sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
                                             aria-label={`info about ${item.title}`}
+                                            onClick={() => handleClickOpen(index)}
                                         >
                                             <InfoIcon />
                                         </IconButton>
@@ -54,6 +68,10 @@ function Index(props: Props) {
                 </Box>
             </Container>
             <AppFooter />
+            <ArtworkDialog 
+            show={openArtworkDialog} 
+            close={() => handleClose()} 
+            artwork={selectedItem}></ArtworkDialog>
         </React.Fragment>
     );
 }

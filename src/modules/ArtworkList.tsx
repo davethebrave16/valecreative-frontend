@@ -13,6 +13,7 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
+import { Tooltip } from '@mui/material';
 
 type Props = {
     content: MainContent,
@@ -21,10 +22,10 @@ type Props = {
 
 function Index(props: Props) {
     const [openArtworkDialog, setOpenArtworkDialog] = React.useState(false);
-    let selectedItem: Artwork = props.artworks[0]
+    const [selectedItem, setSelectedItem] = React.useState(props.artworks[0]);
 
     const handleClickOpen = (index: number) => {
-        selectedItem = props.artworks[index]
+        setSelectedItem(props.artworks[index])
         setOpenArtworkDialog(true);
     };
 
@@ -53,13 +54,15 @@ function Index(props: Props) {
                                     title={item.title}
                                     subtitle={item.year + ' - ' + item.technique + ' - ' + item.size}
                                     actionIcon={
-                                        <IconButton
-                                            sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                                            aria-label={`info about ${item.title}`}
-                                            onClick={() => handleClickOpen(index)}
-                                        >
-                                            <InfoIcon />
-                                        </IconButton>
+                                        <Tooltip title="Clicca per maggiori dettagli" arrow>
+                                            <IconButton
+                                                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                                                aria-label={`info about ${item.title}`}
+                                                onClick={() => handleClickOpen(index)}
+                                            >
+                                                <InfoIcon />
+                                            </IconButton>
+                                        </Tooltip>
                                     }
                                 />
                             </ImageListItem>
@@ -68,10 +71,7 @@ function Index(props: Props) {
                 </Box>
             </Container>
             <AppFooter />
-            <ArtworkDialog 
-            show={openArtworkDialog} 
-            close={() => handleClose()} 
-            artwork={selectedItem}></ArtworkDialog>
+            <ArtworkDialog show={openArtworkDialog} close={() => handleClose()} artwork={selectedItem}></ArtworkDialog>
         </React.Fragment>
     );
 }

@@ -4,7 +4,7 @@ import { parseJSONArray } from '@/common/utils/mapper-utils'
 import { ArtworkType } from '@/models/artworktype.model'
 import { Artwork } from '@/models/artwork.model'
 import { ArtworkTypeArrayItem } from '@/models/artworktypearray.model'
-import { identity } from 'lodash'
+import { ArtworkArrayItem } from '@/models/artworkarray.model'
 
 async function getArtworkTypes(showInHome: boolean = false, includeImages: boolean = false) {
     const params = []
@@ -32,7 +32,7 @@ async function getArtworkTypes(showInHome: boolean = false, includeImages: boole
     }
 }
 
-async function getArtworks(type: string, includeImages: boolean = false) {
+async function getArtworks(type?: string, includeImages: boolean = false) {
     const params = []
     if (type) {
         params.push("filters[type][$eq]=" + type)
@@ -41,9 +41,22 @@ async function getArtworks(type: string, includeImages: boolean = false) {
         params.push("populate=*")
     }
     const { data, error } = await get(artworks + ((params.length > 0) ? ('?' + params.join('&')) : ''))
-
+    const resultArray: ArtworkArrayItem[] = data ? parseJSONArray<ArtworkArrayItem[]>(data) : data
+    const results = resultArray.map(item => {
+        const element: Artwork = {
+            id: item.id,
+            title: item.attributes.title,
+            description: item.attributes.description,
+            size: item.attributes.size,
+            technique: item.attributes.technique,
+            year: item.attributes.year,
+            picture: addImageBaseUrl(item.attributes.picture.data.attributes.url),
+            type: item.attributes.type.data.attributes.title
+        }
+        return element
+    })
     return {
-        data: data ? parseJSONArray<Artwork>(data) : data,
+        data: results,
         isLoading: !error && !data,
         isError: error,
     }

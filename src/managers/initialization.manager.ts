@@ -1,4 +1,4 @@
-import { getArtworkTypes } from "@/api/gallery.api"
+import { getArtworks, getArtworkTypes } from "@/api/gallery.api"
 import { getHowItWorks, getMainContent, getProductValues } from "@/api/main.api"
 
 async function initialize() {
@@ -11,4 +11,12 @@ async function initialize() {
     return allData
 }
 
-export { initialize }
+async function getGallery() {
+    const allData = await Promise.all([
+        getMainContent(),
+        getArtworks(undefined, true)
+    ])
+    return allData
+}
+
+export { initialize, getGallery }

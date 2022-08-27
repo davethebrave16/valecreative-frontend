@@ -24,12 +24,6 @@ export default function ProductHero(props: Props) {
         backgroundPosition: 'center',
       }}
     >
-      {/* Increase the network loading priority of the background image. */}
-      <Image
-        src={backgroundImage}
-        alt="increase priority"
-        layout="fill"
-      />
       <Typography color="inherit" align="center" variant="h2" marked="center">
         {props.data.headerTitle}
       </Typography>

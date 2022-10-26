@@ -52,13 +52,13 @@ async function getArtworks(type?: string, includeImages: boolean = false) {
             year: item.attributes.year,
             originalPicture: addImageBaseUrl(item.attributes.picture.data?.attributes.url),
             thumbnailPicture: (item.attributes.picture.data?.attributes.formats.thumbnail) ? 
-                addImageBaseUrl(item.attributes.picture.data?.attributes.formats.thumbnail?.url) : undefined,
+                addImageBaseUrl(item.attributes.picture.data?.attributes.formats.thumbnail?.url) : null,
             smallPicture: (item.attributes.picture.data?.attributes.formats.small) ? 
-                addImageBaseUrl(item.attributes.picture.data?.attributes.formats.small?.url) : undefined,
+                addImageBaseUrl(item.attributes.picture.data?.attributes.formats.small?.url) : null,
             mediumPicture: (item.attributes.picture.data?.attributes.formats.medium) ? 
-                addImageBaseUrl(item.attributes.picture.data?.attributes.formats.medium?.url) : undefined,
+                addImageBaseUrl(item.attributes.picture.data?.attributes.formats.medium?.url) : null,
             largePicture: (item.attributes.picture.data?.attributes.formats.large) ? 
-                addImageBaseUrl(item.attributes.picture.data?.attributes.formats.large?.url) : undefined,
+                addImageBaseUrl(item.attributes.picture.data?.attributes.formats.large?.url) : null,
             type: (item.attributes.type.data) ? item.attributes.type.data.attributes.title : '',
             typeId: (item.attributes.type.data) ? item.attributes.type.data.id : 0
         }

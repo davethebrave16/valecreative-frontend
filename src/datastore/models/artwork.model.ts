@@ -6,10 +6,10 @@ export type Artwork = {
     technique: string
     size: string
     originalPicture: string
-    thumbnailPicture: string | undefined
-    smallPicture: string | undefined
-    mediumPicture: string | undefined
-    largePicture: string | undefined
+    thumbnailPicture: string | null
+    smallPicture: string | null
+    mediumPicture: string | null
+    largePicture: string | null
     type: string
     typeId: number
 }

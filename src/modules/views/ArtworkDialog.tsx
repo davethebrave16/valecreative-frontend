@@ -32,7 +32,7 @@ const ArtworkDialog = (props: Props) => {
   const images = props.artworks.map((item) => {
     return {
       'original': (item.largePicture) ? item.largePicture : item.originalPicture,
-      'thumbnail': item.thumbnailPicture,
+      'thumbnail': (item.thumbnailPicture) ?  item.thumbnailPicture : item.originalPicture,
       'description': item.title + "    |    " + ((item.year) ? item.year : "") + ' - ' + item.technique + ' - ' + item.size
     }
   });

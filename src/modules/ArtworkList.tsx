@@ -51,8 +51,8 @@ function Index(props: Props) {
                         {props.artworks.map((item, index) => (
                             <ImageListItem key={item.id}>
                                 <img
-                                    src={item.smallPicture}
-                                    srcSet={item.smallPicture}
+                                    src={(item.smallPicture) ? item.smallPicture : item.originalPicture}
+                                    srcSet={(item.smallPicture) ? item.smallPicture : item.originalPicture}
                                     alt={item.title}
                                     loading="lazy"
                                     style={{ overflow: "hidden" }}

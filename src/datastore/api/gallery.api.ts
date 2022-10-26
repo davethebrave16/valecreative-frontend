@@ -50,7 +50,11 @@ async function getArtworks(type?: string, includeImages: boolean = false) {
             size: item.attributes.size,
             technique: item.attributes.technique,
             year: item.attributes.year,
-            picture: addImageBaseUrl(item.attributes.picture.data?.attributes.url),
+            originalPicture: addImageBaseUrl(item.attributes.picture.data?.attributes.url),
+            thumbnailPicture: addImageBaseUrl(item.attributes.picture.data?.attributes.formats.thumbnail?.url),
+            smallPicture: addImageBaseUrl(item.attributes.picture.data?.attributes.formats.small?.url),
+            mediumPicture: addImageBaseUrl(item.attributes.picture.data?.attributes.formats.medium?.url),
+            largePicture: addImageBaseUrl(item.attributes.picture.data?.attributes.formats.large?.url),
             type: (item.attributes.type.data) ? item.attributes.type.data.attributes.title : '',
             typeId: (item.attributes.type.data) ? item.attributes.type.data.id : 0
         }

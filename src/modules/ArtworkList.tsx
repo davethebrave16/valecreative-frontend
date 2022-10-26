@@ -14,6 +14,7 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 import { Tooltip } from '@mui/material';
+import { useMediaQuery } from 'react-responsive';
 
 type Props = {
     content: MainContent,
@@ -33,6 +34,8 @@ function Index(props: Props) {
         setOpenArtworkDialog(false);
     };
 
+    const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
+
     return (
         <React.Fragment>
             <AppAppBar />
@@ -41,14 +44,18 @@ function Index(props: Props) {
                     <Typography variant="h3" gutterBottom marked="center" align="center">
                         {props.content.galleryTitle}
                     </Typography>
-                    <ImageList>
+                    <ImageList
+                        cols={(isMobile) ? 1 : 3}
+                        rowHeight={350}
+                    >
                         {props.artworks.map((item, index) => (
                             <ImageListItem key={item.id}>
                                 <img
-                                    src={item.picture}
-                                    srcSet={item.picture}
+                                    src={item.smallPicture}
+                                    srcSet={item.smallPicture}
                                     alt={item.title}
                                     loading="lazy"
+                                    style={{ overflow: "hidden" }}
                                 />
                                 <ImageListItemBar
                                     title={item.title}

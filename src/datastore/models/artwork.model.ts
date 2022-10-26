@@ -5,7 +5,11 @@ export type Artwork = {
     year: number
     technique: string
     size: string
-    picture: string
+    originalPicture: string
+    thumbnailPicture: string | null
+    smallPicture: string | null
+    mediumPicture: string | null
+    largePicture: string | null
     type: string
     typeId: number
 }

@@ -14,6 +14,27 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 import { Tooltip } from '@mui/material';
+import { styled } from '@mui/material/styles';
+
+const ImageGalleryList = styled('ul')(({ theme }) => ({
+    display: 'grid',
+    padding: 0,
+    margin: theme.spacing(0, 4),
+    gap: 8,
+    rowHeight: 350,
+    [theme.breakpoints.up('sm')]: {
+        gridTemplateColumns: 'repeat(2, 1fr)'
+    },
+    [theme.breakpoints.up('md')]: {
+        gridTemplateColumns: 'repeat(3, 1fr)'
+    },
+    [theme.breakpoints.up('lg')]: {
+        gridTemplateColumns: 'repeat(4, 1fr)'
+    },
+    [theme.breakpoints.up('xl')]: {
+        gridTemplateColumns: 'repeat(5, 1fr)'
+    },
+}));
 
 type Props = {
     content: MainContent,
@@ -22,10 +43,10 @@ type Props = {
 
 function Index(props: Props) {
     const [openArtworkDialog, setOpenArtworkDialog] = React.useState(false);
-    const [selectedItem, setSelectedItem] = React.useState(props.artworks[0]);
+    const [selectedItem, setSelectedItem] = React.useState(0);
 
     const handleClickOpen = (index: number) => {
-        setSelectedItem(props.artworks[index])
+        setSelectedItem(index)
         setOpenArtworkDialog(true);
     };
 
@@ -41,14 +62,15 @@ function Index(props: Props) {
                     <Typography variant="h3" gutterBottom marked="center" align="center">
                         {props.content.galleryTitle}
                     </Typography>
-                    <ImageList>
+                    <ImageGalleryList>
                         {props.artworks.map((item, index) => (
                             <ImageListItem key={item.id}>
                                 <img
-                                    src={item.picture}
-                                    srcSet={item.picture}
+                                    src={(item.smallPicture) ? item.smallPicture : item.originalPicture}
+                                    srcSet={(item.smallPicture) ? item.smallPicture : item.originalPicture}
                                     alt={item.title}
                                     loading="lazy"
+                                    style={{ overflow: "hidden" }}
                                 />
                                 <ImageListItemBar
                                     title={item.title}
@@ -67,11 +89,15 @@ function Index(props: Props) {
                                 />
                             </ImageListItem>
                         ))}
-                    </ImageList>
+                    </ImageGalleryList>
                 </Box>
             </Container>
             <AppFooter />
-            <ArtworkDialog show={openArtworkDialog} close={() => handleClose()} artwork={selectedItem}></ArtworkDialog>
+            <ArtworkDialog
+                show={openArtworkDialog}
+                close={() => handleClose()}
+                artworks={props.artworks}
+                selectedItem={selectedItem}></ArtworkDialog>
         </React.Fragment>
     );
 }

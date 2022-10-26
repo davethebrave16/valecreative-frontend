@@ -25,4 +25,16 @@ export type ArtworkArrayItem3 = {
 export type ArtworkArrayItem4 = {
     url: string
     title: string
+    formats: ArtworkArrayItem5
+}
+
+export type ArtworkArrayItem5 = {
+    large: ArtworkArrayItem6
+    small: ArtworkArrayItem6
+    medium: ArtworkArrayItem6
+    thumbnail: ArtworkArrayItem6
+}
+
+export type ArtworkArrayItem6 = {
+    url: string
 }

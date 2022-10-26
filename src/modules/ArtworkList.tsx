@@ -23,10 +23,10 @@ type Props = {
 
 function Index(props: Props) {
     const [openArtworkDialog, setOpenArtworkDialog] = React.useState(false);
-    const [selectedItem, setSelectedItem] = React.useState(props.artworks[0]);
+    const [selectedItem, setSelectedItem] = React.useState(0);
 
     const handleClickOpen = (index: number) => {
-        setSelectedItem(props.artworks[index])
+        setSelectedItem(index)
         setOpenArtworkDialog(true);
     };
 
@@ -78,7 +78,11 @@ function Index(props: Props) {
                 </Box>
             </Container>
             <AppFooter />
-            <ArtworkDialog show={openArtworkDialog} close={() => handleClose()} artwork={selectedItem}></ArtworkDialog>
+            <ArtworkDialog
+                show={openArtworkDialog}
+                close={() => handleClose()}
+                artworks={props.artworks}
+                selectedItem={selectedItem}></ArtworkDialog>
         </React.Fragment>
     );
 }

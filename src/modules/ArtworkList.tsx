@@ -14,7 +14,26 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 import { Tooltip } from '@mui/material';
-import { useMediaQuery } from 'react-responsive';
+import { styled } from '@mui/material/styles';
+
+const ImageGalleryList = styled('ul')(({ theme }) => ({
+    display: 'grid',
+    padding: 0,
+    margin: theme.spacing(0, 4),
+    gap: 8,
+    [theme.breakpoints.up('sm')]: {
+        gridTemplateColumns: 'repeat(2, 1fr)'
+    },
+    [theme.breakpoints.up('md')]: {
+        gridTemplateColumns: 'repeat(3, 1fr)'
+    },
+    [theme.breakpoints.up('lg')]: {
+        gridTemplateColumns: 'repeat(4, 1fr)'
+    },
+    [theme.breakpoints.up('xl')]: {
+        gridTemplateColumns: 'repeat(5, 1fr)'
+    },
+}));
 
 type Props = {
     content: MainContent,
@@ -34,8 +53,6 @@ function Index(props: Props) {
         setOpenArtworkDialog(false);
     };
 
-    const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
-
     return (
         <React.Fragment>
             <AppAppBar />
@@ -44,8 +61,8 @@ function Index(props: Props) {
                     <Typography variant="h3" gutterBottom marked="center" align="center">
                         {props.content.galleryTitle}
                     </Typography>
-                    <ImageList
-                        cols={(isMobile) ? 1 : 3}
+                    <ImageGalleryList
+                        
                         rowHeight={350}
                     >
                         {props.artworks.map((item, index) => (
@@ -74,7 +91,7 @@ function Index(props: Props) {
                                 />
                             </ImageListItem>
                         ))}
-                    </ImageList>
+                    </ImageGalleryList>
                 </Box>
             </Container>
             <AppFooter />

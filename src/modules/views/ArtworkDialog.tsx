@@ -28,7 +28,6 @@ type Props = {
 }
 
 const ArtworkDialog = (props: Props) => {
-  console.log(props.artworks);
   const images = props.artworks.map((item) => {
     return {
       'original': (item.largePicture) ? item.largePicture : item.originalPicture,

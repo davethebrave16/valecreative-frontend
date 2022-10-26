@@ -21,6 +21,7 @@ const ImageGalleryList = styled('ul')(({ theme }) => ({
     padding: 0,
     margin: theme.spacing(0, 4),
     gap: 8,
+    rowHeight: 350,
     [theme.breakpoints.up('sm')]: {
         gridTemplateColumns: 'repeat(2, 1fr)'
     },
@@ -61,10 +62,7 @@ function Index(props: Props) {
                     <Typography variant="h3" gutterBottom marked="center" align="center">
                         {props.content.galleryTitle}
                     </Typography>
-                    <ImageGalleryList
-                        
-                        rowHeight={350}
-                    >
+                    <ImageGalleryList>
                         {props.artworks.map((item, index) => (
                             <ImageListItem key={item.id}>
                                 <img

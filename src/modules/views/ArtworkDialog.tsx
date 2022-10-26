@@ -8,8 +8,6 @@ import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 import { Artwork } from '@/models/artwork.model';
 import { Container } from '@mui/system';
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import ImageGallery from 'react-image-gallery';
 
@@ -30,12 +28,12 @@ type Props = {
 }
 
 const ArtworkDialog = (props: Props) => {
-
+  console.log(props.artworks);
   const images = props.artworks.map((item) => {
     return {
-      'original': item.largePicture,
+      'original': (item.largePicture) ? item.largePicture : item.originalPicture,
       'thumbnail': item.thumbnailPicture,
-      'description': item.year + ' - ' + item.technique + ' - ' + item.size
+      'description': item.title + "    |    " + ((item.year) ? item.year : "") + ' - ' + item.technique + ' - ' + item.size
     }
   });
 
@@ -62,7 +60,10 @@ const ArtworkDialog = (props: Props) => {
           component="section"
           maxWidth='lg'>
           <Box component='div' style={{ position: 'relative', width: '100%', height: '100%' }}>
-            <ImageGallery items={images} startIndex={props.selectedItem} />
+            <ImageGallery 
+            items={images} 
+            startIndex={props.selectedItem}
+            thumbnailPosition="right" />
           </Box>
         </Container>
       </Dialog>
